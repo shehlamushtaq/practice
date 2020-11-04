@@ -368,23 +368,23 @@ var country = ["Afghanistan","Albania","Algeria","Andorra","Angola",
 // of each word of the string in upper case.
 //=======================================================================
 
-var name = "she is my friend and her name is hina";
-console.log(titlecase(name))
+// var name = "she is my friend and her name is hina";
+// console.log(titlecase(name))
 
-function titlecase(str) {
-        var nstring = str.split(' ')
-        for(var i=0; i<nstring.length; i++){
-            var myname = nstring[i]
-            console.log(myname)
-            var upString = myname.charAt(0).toUpperCase()
-            var remaing = myname.slice(1,(myname.length))
-        //    myname = myname.replace()
-                nstring[i] = upString+remaing
+// function titlecase(str) {
+//         var nstring = str.split(' ')
+//         for(var i=0; i<nstring.length; i++){
+//             var myname = nstring[i]
+//             console.log(myname)
+//             var upString = myname.charAt(0).toUpperCase()
+//             var remaing = myname.slice(1,(myname.length))
+//         //    myname = myname.replace()
+//                 nstring[i] = upString+remaing
                 
 
-        }
-        return nstring.join(" ")
-}
+//         }
+//         return nstring.join(" ")
+// }
 
 //count of voweles=============================================
 // var name = "shehla mushtaq";
@@ -480,3 +480,111 @@ function titlecase(str) {
 // }
 
 
+//==========================================
+//generate random number
+//========================================
+// var days = [`monday`,`tuesday`,`wednesday`,`thursday`,`friday`,`saturday`]
+// var index =Math.round( ((Math.random()*4)+1))
+// console.log(days[index]);
+// console.log(index);
+//=======================================================================
+//Date and Time
+//=======================================================================
+//================================================================
+//calculate the days of your age
+//==============================================================
+
+// var now = new Date();
+// console.log("Now = " +now);
+
+
+// var dob = new Date('May 01, 1978');
+// console.log(" Date Of Birth = "+ dob);
+
+// var diff = now.getTime() - dob.getTime();
+// console.log("Difference = "+ diff);
+
+// var days =Math.round( diff/(1000*60*60*24));
+// console.log("days = "+ days);
+
+//==================================================================
+//Calculate hours from now till Tomorrow
+//===================================================================
+// var now = new Date();
+// console.log("Now = " +now);
+
+// var tomorow = new Date("Nov 05 2020 9:00:00")
+// console.log("tomorow = " +tomorow);
+
+// var diff = tomorow.getTime() - now.getTime();
+// var hours =Math.round(diff/(1000*60*60))
+// console.log("Remaing Hours = " +hours)
+
+//==============================================================
+//Create a function that tells current time in Y-m-d format.
+//================================================================
+currentDate();
+
+function currentDate(){
+    var now = new Date();
+var year = now.getFullYear();
+var month = now.getMonth()+1;
+var dat = now.getDate();
+
+    console.log(now)
+    console.log(year+"-" + month +"-" + dat)
+    console.log(year+"-" + month +"-" + dat)
+  
+}
+
+//==============================================================
+//Create a function that tells current time from Date object in H:i:s format
+//===================================================================
+timeFunction();
+
+function timeFunction(){
+    var now = new Date()
+    // var time = now.getTime()
+    var hh = now.getHours();
+    var mm = now.getMinutes();
+    var ss = now.getSeconds();
+
+
+    console.log(MakeDoubleDigit(hh) + ':' + MakeDoubleDigit(mm) + ':' + MakeDoubleDigit(ss));
+
+}
+
+console.log(ShowTimeInAMPM ("20:25:30"));
+
+function MakeDoubleDigit (num) {
+
+    if (num > 9) {
+        return num;
+    } else {
+        return "0" + num;
+    }
+
+}
+
+function ShowTimeInAMPM (timeInHHMMSS) {
+
+    var arr = timeInHHMMSS.split(':');
+    var hh = arr[0];
+    var am_pm = '';
+
+    if (hh < 12) {
+        am_pm = 'AM';
+    } else {
+        am_pm = 'PM';
+    }
+
+    if (hh > 12) {
+        hh = hh - 12;
+    }
+
+    arr[0] = MakeDoubleDigit(hh);
+
+    var new_time = arr.join(':');
+    return new_time + ' ' + am_pm;
+         
+}
