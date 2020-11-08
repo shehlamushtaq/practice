@@ -523,68 +523,155 @@ var country = ["Afghanistan","Albania","Algeria","Andorra","Angola",
 //==============================================================
 //Create a function that tells current time in Y-m-d format.
 //================================================================
-currentDate();
+// currentDate();
 
-function currentDate(){
-    var now = new Date();
-var year = now.getFullYear();
-var month = now.getMonth()+1;
-var dat = now.getDate();
+// function currentDate(){
+//     var now = new Date();
+// var year = now.getFullYear();
+// var month = now.getMonth()+1;
+// var dat = now.getDate();
 
-    console.log(now)
-    console.log(year+"-" + month +"-" + dat)
-    console.log(year+"-" + month +"-" + dat)
+//     console.log(now)
+//     console.log(year+"-" + month +"-" + dat)
+//     console.log(year+"-" + month +"-" + dat)
   
-}
+// }
 
-//==============================================================
-//Create a function that tells current time from Date object in H:i:s format
-//===================================================================
-timeFunction();
+// //==============================================================
+// //Create a function that tells current time from Date object in H:i:s format
+// //===================================================================
+// timeFunction();
 
-function timeFunction(){
-    var now = new Date()
-    // var time = now.getTime()
-    var hh = now.getHours();
-    var mm = now.getMinutes();
-    var ss = now.getSeconds();
+// function timeFunction(){
+//     var now = new Date()
+//     // var time = now.getTime()
+//     var hh = now.getHours();
+//     var mm = now.getMinutes();
+//     var ss = now.getSeconds();
 
 
-    console.log(MakeDoubleDigit(hh) + ':' + MakeDoubleDigit(mm) + ':' + MakeDoubleDigit(ss));
+//     console.log(MakeDoubleDigit(hh) + ':' + MakeDoubleDigit(mm) + ':' + MakeDoubleDigit(ss));
 
-}
+// }
 
-console.log(ShowTimeInAMPM ("20:25:30"));
+// console.log(ShowTimeInAMPM ("20:25:30"));
 
-function MakeDoubleDigit (num) {
+// function MakeDoubleDigit (num) {
 
-    if (num > 9) {
-        return num;
-    } else {
-        return "0" + num;
-    }
+//     if (num > 9) {
+//         return num;
+//     } else {
+//         return "0" + num;
+//     }
 
-}
+// }
 
-function ShowTimeInAMPM (timeInHHMMSS) {
+// function ShowTimeInAMPM (timeInHHMMSS) {
 
-    var arr = timeInHHMMSS.split(':');
-    var hh = arr[0];
-    var am_pm = '';
+//     var arr = timeInHHMMSS.split(':');
+//     var hh = arr[0];
+//     var am_pm = '';
 
-    if (hh < 12) {
-        am_pm = 'AM';
-    } else {
-        am_pm = 'PM';
-    }
+//     if (hh < 12) {
+//         am_pm = 'AM';
+//     } else {
+//         am_pm = 'PM';
+//     }
 
-    if (hh > 12) {
-        hh = hh - 12;
-    }
+//     if (hh > 12) {
+//         hh = hh - 12;
+//     }
 
-    arr[0] = MakeDoubleDigit(hh);
+//     arr[0] = MakeDoubleDigit(hh);
 
-    var new_time = arr.join(':');
-    return new_time + ' ' + am_pm;
+//     var new_time = arr.join(':');
+//     return new_time + ' ' + am_pm;
          
+// }
+
+//=========================================================
+// var dob = prompt('enter your date of birth i-e yy-mm-dd')
+
+// getAge(dob)
+
+// function getAge(num) {
+    
+
+//     var dobN = num.split('-')
+//     var num2 = num.Date();
+
+//     var year = num2.getFullYear() - dobN[0]
+//     var month = num2.getMonth() - dobN[1]
+//     var date = num2.getDate() = dateN[2]
+
+//     console.log(`your age is ${year} years
+//     ${month} month and 
+//     ${date} days`)
+
+// }
+
+// function doo() {
+//     var countryArr = ['pakistan','india','bangladesh','saudiarab','afghanistan']
+//     var cityArr = ['karachi','mumbai','kolkata','riaz','kabul']
+    
+//     var country = document.getElementById("country").value.toLowerCase();
+//     var index = countryArr.indexOf(country)
+//     var city = document.getElementById('city')
+//     if (country == countryArr[index]) {
+//        city.value = cityArr[index]
+//     } else {
+//     city.value = " "
+//     }}
+//===============================================================
+// var yourAmount = +(prompt(`Enter your amount to calculate Zakat`))
+// var zakat = zakatAmount(yourAmount)
+// console.log(zakat)
+// function zakatAmount(num) {
+//     var amount = (num/40)
+//     return amount
+// }
+
+function hideMe() {
+    var para = document.getElementById("para")
+    para.classList.add("blue")
+    
 }
+function unhide() {
+    var para = document.getElementById("para")
+    para.classList.add("black")
+}
+
+
+function replaceCity() {
+    var city = document.getElementById("city")
+    console.log(city.children[0].innerHTML) 
+
+    var element = "Sydney"
+    for (let i = 0; i < city.children.length; i++) {
+        
+        if (city.children[i].innerHTML == "Kuwait") {
+                city.children[i].innerHTML = element
+                break
+        }
+        
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
